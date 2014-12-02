@@ -9,9 +9,11 @@ Common Lisp."
 
 Dependencies:
  - The editline library (Linux & Mac)
+
+Includes:
  - [*MPC*](https://github.com/orangeduck/mpc), a parser combinator library
 
 To install:
-- `make prompt' from project root
-- `./prompt' to run
+- 'make prompt' from project root
+- './prompt' to run
 
