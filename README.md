@@ -14,6 +14,6 @@ Includes:
  - [*MPC*](https://github.com/orangeduck/mpc), a parser combinator library
 
 To install:
-- 'make prompt' from project root
-- './prompt' to run
+- 'make parsing' from project root
+- './parsing' to run
 
