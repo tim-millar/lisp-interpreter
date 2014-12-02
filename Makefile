@@ -1,9 +1,9 @@
 CC=gcc
-CFLAGS=-Wall -g -std=c99
-LDFLAGS=-ledit
+CFLAGS=-std=c99 -Wall -g
+LDFLAGS=-ledit -lm
 
 clean:
-	rm -rf prompt
+	rm -rf prompt parsing
 
-prompt:
-	$(CC) $(CFLAGS) prompt.c $(LDFLAGS) -o prompt
+parsing:
+	$(CC) $(CFLAGS) parsing.c mpc.c $(LDFLAGS) -o parsing

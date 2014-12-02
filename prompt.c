@@ -28,6 +28,7 @@ void add_history(char *unused) {}
 
 int main(int argc, char *argv[])
 {
+  puts("Oh! moon old boughs LISP forth a holier din (Keats)");
   puts("LISPish Version 0.0.0.0.1");
   puts("Press Ctrl-c to Exit\n");
 
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     char *input = readline("lispish> ");
     add_history(input);
 
-    printf("No, you're a %s\n", input);
+    printf("No, you're a %s.\n", input);
     free(input);
   }
   return 0;
