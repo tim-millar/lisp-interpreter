@@ -3,7 +3,7 @@ CFLAGS=-std=c99 -Wall -g
 LDFLAGS=-ledit -lm
 
 clean:
-	rm -rf prompt parsing
+	rm -rf evaluation prompt parsing
 
-parsing:
-	$(CC) $(CFLAGS) parsing.c mpc.c $(LDFLAGS) -o parsing
+evaluation:
+	$(CC) $(CFLAGS) evaluation.c mpc.c $(LDFLAGS) -o evaluation

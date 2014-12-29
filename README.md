@@ -13,7 +13,26 @@ Dependencies:
 Includes:
  - [*MPC*](https://github.com/orangeduck/mpc), a parser combinator library
 
-To install:
-- 'make parsing' from project root
-- './parsing' to run
+Based on:
+ - [*Build Your Own Lisp*](http://www.buildyourownlisp.com/)
 
+To install:
+ - 'make evaluation' from project root
+ - './evaluation' to run
+
+Todo:
+ - floating point numbers
+ - negation
+
+Sample session:
+    "Oh! moon old boughs LISP forth a holier din" (Keats)
+    Lispish Version 0.0.0.0.3
+    Press Ctrl-c to Exit
+
+    lispish> + 2 3
+    + 2 3
+    5
+    lispish> * 3 (min 7 8 9) (/ 12 3) (- 4 (% 5 2))
+    * 3 (min 7 8 9) (/ 12 3) (- 4 (% 5 2))
+    252
+    lispish>

@@ -30,14 +30,15 @@ int main(int argc, char *argv[])
   mpc_parser_t *Number   = mpc_new("number");
   mpc_parser_t *Operator = mpc_new("operator");
   mpc_parser_t *Expr     = mpc_new("expr");
-  mpc_parser_t *Lispish = mpc_new("lispish");
+  mpc_parser_t *Lispish  = mpc_new("lispish");
 
   /* Define them with the following language */
   mpca_lang(MPCA_LANG_DEFAULT,
    "                                                      \
-    number   : /-?[0-9]+/ ;				  \
-    operator : '+' | '-' | '*' | '/' ;			  \
-    expr     : <number> | '(' <operator> <expr> ')' ;     \
+    number   : /-?([0-9]*\.?[0-9]+|[0-9]+)/ ;		  \
+    operator : '+' | '-' | '*' | '/' | '%' |		  \
+               /add/ | /sub/ | /mul/ | /div/ | /mod/ ;	  \
+    expr     : <number> | '(' <operator> <expr>+ ')' ;	  \
     lispish  : /^/ <operator> <expr>+ /$/ ;		  \
   ",
   Number, Operator, Expr, Lispish);
