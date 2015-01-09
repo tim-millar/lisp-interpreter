@@ -25,9 +25,6 @@ Todo:
  - negation
 
 Sample session:
-    "Oh! moon old boughs LISP forth a holier din" (Keats)
-    Lispish Version 0.0.0.0.3
-    Press Ctrl-c to Exit
 
     lispish> + 2 3
     + 2 3

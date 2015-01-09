@@ -35,9 +35,7 @@ int min(int x, int y) {
 /* Use operator string to see which operation to perform */
 long eval_op(long x, char *op, long y) {
   if (strcmp(op, "+"  ) == 0) { return x + y; }
-  if (strcmp(op, "-"  ) == 0) {
-    if (!y) { return -x; }
-    else    { return x - y;}}
+  if (strcmp(op, "-"  ) == 0) { return x - y; }
   if (strcmp(op, "*"  ) == 0) { return x * y; }
   if (strcmp(op, "/"  ) == 0) { return x / y; }
   if (strcmp(op, "%"  ) == 0) { return x % y; }
@@ -48,8 +46,8 @@ long eval_op(long x, char *op, long y) {
   if (strcmp(op, "div") == 0) { return x / y; }
   if (strcmp(op, "mod") == 0) { return x % y; }
   if (strcmp(op, "pow") == 0) { return (int) pow ((double) x, (double) y); }
-  if (strcmp(op, "max") == 0) { return max(x, y); }
-  if (strcmp(op, "min") == 0) { return min(x, y); }
+  if (strcmp(op, "max") == 0) { return max (x, y); }
+  if (strcmp(op, "min") == 0) { return min (x, y); }
   return 0;
 }
 
