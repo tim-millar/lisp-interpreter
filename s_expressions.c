@@ -46,7 +46,7 @@ lval *lval_num(long x) {
 lval *lval_err(char *m) {
   lval *v = malloc(sizeof(lval));
   v->type = LVAL_ERR;
-  v->err = malloc(strlen(m)+1);
+  v->err = malloc(strlen(m) + 1);
   strcpy(v->err, m);
   return v;
 }
@@ -54,9 +54,9 @@ lval *lval_err(char *m) {
 /* Construct pointer to a new Symbol lval */
 lval *lval_sym(char *m) {
   lval *v = malloc(sizeof(lval));
-  v->type = LVAL_ERR;
-  v->err = malloc(strlen(m)+1);
-  strcpy(v->err, m);
+  v->type = LVAL_SYM;
+  v->sym = malloc(strlen(m) + 1);
+  strcpy(v->sym, m);
   return v;
 }
 
@@ -78,7 +78,7 @@ void lval_del(lval *v) {
     
     /* For Err or Sym free the string data */
   case LVAL_ERR: free(v->err); break;
-  case LVAL_SYM: free(v->sym);  break;
+  case LVAL_SYM: free(v->sym); break;
 
     /* If sexpr delete all elements inside */
   case LVAL_SEXPR:
@@ -279,7 +279,7 @@ int main(int argc, char *argv[])
              symbol : '+' | '-' | '*' | '/' ;		       \
              sexpr  : '(' <expr>* ')' ;			       \
              expr   : <number> | <symbol> | <sexpr> ;	       \
-             lispy  : /^/ <expr>* /$/ ;			       \
+             lispish: /^/ <expr>* /$/ ;			       \
             ",
 	    Number, Symbol, Sexpr, Expr, Lispish);
 
